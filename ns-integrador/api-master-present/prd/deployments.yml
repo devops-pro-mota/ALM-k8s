@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-api-master-present
-  namespace: dev-ns-integrador
+  name: prd-api-master-present
+  namespace: prd-ns-integrador
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dev-api-master-present
+      app: prd-api-master-present
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,15 +16,15 @@ spec:
   template:
     metadata:
       labels:
-        app: dev-api-master-present
+        app: prd-api-master-present
     spec:
       containers:
-        - name: dev-api-master-present
-          image: "rodrigomotadevops/dev-api-master-present:1"
+        - name: prd-api-master-present
+          image: "rodrigomotadevops/prd-api-master-present:1"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
-              value: dev
+              value: prd
             - name: ENDPOINT_BM_BROKER_COLETOR
               value: ${DEV_ENDPOINT_BROKER_COLETOR}
             - name: ENDPOINT_RESOURCE_BM_BROKER_COLETOR

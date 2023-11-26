@@ -1,13 +1,13 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: dev-api-master-present
-  namespace: dev-ns-integrador
+  name: hml-api-master-present
+  namespace: hml-ns-integrador
 spec:
   maxReplicas: 1
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: dev-api-master-present
+    name: hml-api-master-present
   targetCPUUtilizationPercentage: 40
