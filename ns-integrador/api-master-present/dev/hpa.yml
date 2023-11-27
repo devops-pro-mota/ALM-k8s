@@ -4,8 +4,8 @@ metadata:
   name: dev-api-master-present
   namespace: dev-ns-integrador
 spec:
-  maxReplicas: 1
-  minReplicas: 1
+  maxReplicas: 
+  minReplicas: 
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment

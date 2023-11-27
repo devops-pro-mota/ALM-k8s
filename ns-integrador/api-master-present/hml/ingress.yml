@@ -12,7 +12,7 @@ metadata:
 
 spec:
   rules:
-  - host: hml-api-google-auth.master.com.br
+  - host: hml-api-master-present.master.com.br
     http:
       paths:
       - path: /

@@ -12,7 +12,7 @@ metadata:
 
 spec:
   rules:
-  - host: dev-api-google-auth.master.com.br
+  - host: dev-api-master-present.master.com.br
     http:
       paths:
       - path: /
