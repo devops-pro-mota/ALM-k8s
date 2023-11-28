@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: prd-api-mota-apresentacao
+  namespace: prd-bs-poupador
+spec:
+  maxReplicas: 
+  minReplicas: 
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: prd-api-mota-apresentacao
+  targetCPUUtilizationPercentage: 40

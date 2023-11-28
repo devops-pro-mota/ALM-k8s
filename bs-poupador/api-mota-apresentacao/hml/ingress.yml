@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-mota-apresentacao
+  namespace: hml-bs-poupador
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/tags: Environment=hml-api-mota-apresentacao,Team=${ORG},App=api-mota-apresentacao
+
+spec:
+  rules:
+  - host: hml-api-mota-apresentacao.bancomaster.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hml-api-mota-apresentacao
+            port:
+              number: 80

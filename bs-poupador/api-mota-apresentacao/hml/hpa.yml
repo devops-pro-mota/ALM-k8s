@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hml-api-mota-apresentacao
+  namespace: hml-bs-poupador
+spec:
+  maxReplicas: 
+  minReplicas: 
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hml-api-mota-apresentacao
+  targetCPUUtilizationPercentage: 40
