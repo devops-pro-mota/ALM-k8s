@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teste-repo-2
+  namespace: dev-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/tags: Environment=dev-teste-repo-2,Team=${ORG},App=teste-repo-2
+
+spec:
+  rules:
+  - host: dev-teste-repo-2.master.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-teste-repo-2
+            port:
+              number: 80
