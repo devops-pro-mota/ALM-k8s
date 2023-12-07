@@ -4,8 +4,8 @@ metadata:
   name: hml-api-mota-apresentacao
   namespace: hml-bs-poupador
 spec:
-  maxReplicas: 
-  minReplicas: 
+  maxReplicas: 1
+  minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
