@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: novo-teste-api
+  namespace: hml-bs-poupador
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/tags: Environment=hml-novo-teste-api,Team=${ORG},App=novo-teste-api
+
+spec:
+  rules:
+  - host: hml-novo-teste-api.master.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hml-novo-teste-api
+            port:
+              number: 80
