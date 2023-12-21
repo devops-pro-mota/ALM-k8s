@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-api-master-present
-          image: "rodrigomotadevops/dev-api-master-present:7283401027"
+          image: "rodrigomotadevops/dev-api-master-present:7283719898"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
