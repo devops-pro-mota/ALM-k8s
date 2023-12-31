@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: prd-api-master-present
-          image: "rodrigomotadevops/prd-api-master-present:7373159825"
+          image: "rodrigomotadevops/prd-api-master-present:7373402613"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
