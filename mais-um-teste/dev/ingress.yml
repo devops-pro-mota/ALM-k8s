@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mais-um-teste
+  namespace: dev-
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/tags: Environment=dev-mais-um-teste,Team=${ORG},App=mais-um-teste
+
+spec:
+  rules:
+  - host: dev-mais-um-teste.master.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-mais-um-teste
+            port:
+              number: 80
