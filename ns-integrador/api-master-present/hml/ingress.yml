@@ -8,7 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internal
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
     alb.ingress.kubernetes.io/success-codes: 200,301,302
-    alb.ingress.kubernetes.io/tags: Environment=hml-api-master-present,Team=${ORG},App=api-master-present,Versao-RetryBuild=176
+    alb.ingress.kubernetes.io/tags: Environment=hml-api-master-present,Team=${ORG},App=api-master-present,Versao-RetryBuild=177
 
 spec:
   rules:
