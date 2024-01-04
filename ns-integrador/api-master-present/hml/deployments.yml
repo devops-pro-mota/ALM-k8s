@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: hml-api-master-present
-          image: "rodrigomotadevops/hml-api-master-present:7391467542"
+          image: "rodrigomotadevops/hml-api-master-present:7410145314"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
