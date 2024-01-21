@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: prd-worker-processa-dados
-          image: "rodrigomotadevops/prd-worker-processa-dados:1"
+          image: "rodrigomotadevops/prd-worker-processa-dados:7597712891"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
