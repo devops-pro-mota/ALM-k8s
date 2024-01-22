@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: prd-repo-seg-18-53
+  namespace: prd-ns-integrador
+spec:
+  maxReplicas: 1
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: prd-repo-seg-18-53
+  targetCPUUtilizationPercentage: 40

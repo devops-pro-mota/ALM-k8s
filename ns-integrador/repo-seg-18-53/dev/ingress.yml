@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: repo-seg-18-53
+  namespace: dev-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/success-codes: 200,301,302
+    alb.ingress.kubernetes.io/tags: Environment=dev-repo-seg-18-53,Team=${ORG},App=repo-seg-18-53
+
+spec:
+  rules:
+  - host: dev-repo-seg-18-53.teste.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-repo-seg-18-53
+            port:
+              number: 80
