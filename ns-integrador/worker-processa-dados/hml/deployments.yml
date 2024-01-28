@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: hml-worker-processa-dados
-          image: "rodrigomotadevops/hml-worker-processa-dados:1"
+          image: "rodrigomotadevops/hml-worker-processa-dados:7683484439"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
