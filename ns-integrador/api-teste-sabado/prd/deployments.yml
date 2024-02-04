@@ -21,6 +21,9 @@ spec:
       containers:
         - name: prd-api-teste-sabado
           image: "rodrigomotadevops/prd-api-teste-sabado:1"
+          envFrom:
+          - configMapRef:
+              name: api-teste-sabado-cnf
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
