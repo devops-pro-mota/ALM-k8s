@@ -21,6 +21,9 @@ spec:
       containers:
         - name: hml-api-teste-sabado
           image: "rodrigomotadevops/hml-api-teste-sabado:1"
+          envFrom:
+          - configMapRef:
+              name: api-teste-sabado-cnf
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
