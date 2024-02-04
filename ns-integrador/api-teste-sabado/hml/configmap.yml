@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-teste-sabado-cnf
+  namespace: hml-ns-integrador
+data:
+  ambiente: "homologacao"
+  url_frontend: "https://hml-api-url01.com.br"
