@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-api-teste-sabado
-          image: "rodrigomotadevops/dev-api-teste-sabado:1"
+          image: "rodrigomotadevops/dev-api-teste-sabado:7770278812"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
