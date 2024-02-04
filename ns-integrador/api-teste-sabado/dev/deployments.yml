@@ -21,6 +21,9 @@ spec:
       containers:
         - name: dev-api-teste-sabado
           image: "rodrigomotadevops/dev-api-teste-sabado:7770580054"
+          envFrom:
+            - configMapRef:
+                name: api-teste-sabado-cnf
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
