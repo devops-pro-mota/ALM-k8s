@@ -5,3 +5,4 @@ metadata:
   namespace: dev-ns-integrador
 data:
   ambiente: "desenvolvimento"
+  url_frontend: "https://dev-api-semparar.com.br"
