@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-worker-processa-dados
-          image: "rodrigomotadevops/dev-worker-processa-dados:7779239378"
+          image: "rodrigomotadevops/dev-worker-processa-dados:8039113395"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
