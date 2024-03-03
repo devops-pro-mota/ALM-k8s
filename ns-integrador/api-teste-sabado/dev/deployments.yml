@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-api-teste-sabado
-          image: "rodrigomotadevops/dev-api-teste-sabado:8126323322"
+          image: "rodrigomotadevops/dev-api-teste-sabado:8126408693"
           envFrom:
             - configMapRef:
                 name: api-teste-sabado-cnf

@@ -4,3 +4,6 @@ metadata:
   name: api-teste-sabado-cnf
   namespace: dev-ns-integrador
 data:
+  URL_01: "https://api-dev-teste.com.br"
+  ambiente: "desenvolvimento"
+  url_frontend: "https://dev-api-sabado.com.br"
