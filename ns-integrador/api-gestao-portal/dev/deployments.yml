@@ -36,11 +36,11 @@ spec:
             - name: 'OTEL_RESOURCE_ATTRIBUTES'
               value: '${OTEL_RESOURCE_ATTRIBUTES}=dev'   
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 5
             successThreshold: 1
