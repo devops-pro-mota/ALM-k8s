@@ -3,6 +3,9 @@ kind: Service
 metadata:
   name: dev-api-gestao-portal
   namespace: dev-ns-integrador
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /health
+    alb.ingress.kubernetes.io/success-codes: '200'
 spec:
   ports:
     - name: http
