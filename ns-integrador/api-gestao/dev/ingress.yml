@@ -6,15 +6,18 @@ metadata:
   annotations:
     cert-manager.io/issuer: letsencrypt-nginx
 spec:
-  ingressClassName: nginx
+  tls:
+  - hosts:
+    - dev-api-gestao.purecloud.com.br
+    secretName: meu-ingress-tls
   rules:
-    - host: dev-api-gestao.purecloud.com.br
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: dev-api-gestao
-                port:
-                  number: 80
+  - host: dev-api-gestao.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-api-gestao
+            port:
+              number: 80
