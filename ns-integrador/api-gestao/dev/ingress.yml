@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: api-gestao-portal
   namespace: dev-ns-integrador
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
 spec:
   ingressClassName: nginx
   rules:
