@@ -4,7 +4,10 @@ metadata:
   name: api-gestao-portal
   namespace: dev-ns-integrador
   annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
     cert-manager.io/issuer: letsencrypt-nginx
+    cert-manager.io/cluster-issuer: letsencrypt-nginx
 spec:
   tls:
   - hosts:
