@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portaldevops
+  namespace: prd-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  prd-portaldevops.purecloud.com.br
+    secretName: meu-tls-prd-portaldevops.purecloud.com.br
+  rules:
+  - host: prd-portaldevops.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prd-portaldevops
+            port:
+              number: 80
