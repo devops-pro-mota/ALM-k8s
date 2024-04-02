@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - dev-api-gestao.purecloud.com.br
-    secretName: meu-ingress-tls
+    secretName: letsencrypt-cluster-issuer-private-key
   rules:
   - host: dev-api-gestao.purecloud.com.br
     http:
