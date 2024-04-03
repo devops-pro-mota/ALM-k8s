@@ -37,13 +37,6 @@ spec:
               value: '${OTEL_RESOURCE_ATTRIBUTES}=dev'   
           ports:
             - containerPort: 80
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 80
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            successThreshold: 1
           resources:
             limits:
               cpu: 300m
