@@ -7,12 +7,11 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: "/"
     cert-manager.io/issuer: letsencrypt-nginx
-    cert-manager.io/cluster-issuer: letsencrypt-nginx
 spec:
   tls:
   - hosts:
     - dev-api-gestao.purecloud.com.br
-    secretName: letsencrypt-cluster-issuer-private-key
+    secretName: meu-tls-dev-api-gestao.purecloud.com.br
   rules:
   - host: dev-api-gestao.purecloud.com.br
     http:
