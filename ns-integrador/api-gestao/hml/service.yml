@@ -3,9 +3,6 @@ kind: Service
 metadata:
   name: hml-api-gestao
   namespace: hml-ns-integrador
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /health
-    alb.ingress.kubernetes.io/success-codes: '200'
 spec:
   ports:
     - name: http
@@ -14,4 +11,4 @@ spec:
       protocol: TCP
   selector:
     app: hml-api-gestao
-  type: NodePort
+  type: ClusterIP
