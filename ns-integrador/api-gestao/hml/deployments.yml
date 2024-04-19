@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: hml-api-gestao
-          image: "rodrigomotadevops/hml-api-gestao:1"
+          image: "rodrigomotadevops/hml-api-gestao:8747420365"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
