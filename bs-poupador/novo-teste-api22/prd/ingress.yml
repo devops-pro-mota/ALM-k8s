@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: novo-teste-api22
+  namespace: prd-bs-poupador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  prd-novo-teste-api22.pudecloud.com.br
+    secretName: meu-tls-prd-novo-teste-api22.pudecloud.com.br
+  rules:
+  - host: prd-novo-teste-api22.pudecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prd-novo-teste-api22
+            port:
+              number: 80

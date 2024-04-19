@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: novo-teste-api22
+  namespace: hml-bs-poupador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  hml-novo-teste-api22.pudecloud.com.br
+    secretName: meu-tls-hml-novo-teste-api22.pudecloud.com.br
+  rules:
+  - host: hml-novo-teste-api22.pudecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hml-novo-teste-api22
+            port:
+              number: 80
