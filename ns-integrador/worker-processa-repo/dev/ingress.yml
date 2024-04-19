@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dev-worker-processa-repo
+  namespace: dev-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+  - hosts:
+    - dev-worker-processa-repo.purecloud.com.br
+    secretName: meu-tls-dev-worker-processa-repo.purecloud.com.br
+  rules:
+  - host: dev-worker-processa-repo.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-worker-processa-repo
+            port:
+              number: 80

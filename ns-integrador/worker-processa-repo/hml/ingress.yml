@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hml-worker-processa-repo
+  namespace: hml-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+  - hosts:
+    - hml-worker-processa-repo.purecloud.com.br
+    secretName: meu-tls-hml-worker-processa-repo.purecloud.com.br
+  rules:
+  - host: hml-worker-processa-repo.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hml-worker-processa-repo
+            port:
+              number: 80
