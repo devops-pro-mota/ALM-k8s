@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-novo-teste
+  namespace: dev-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  dev-api-novo-teste.purecloud.com.br
+    secretName: meu-tls-dev-api-novo-teste.purecloud.com.br
+  rules:
+  - host: dev-api-novo-teste.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-api-novo-teste
+            port:
+              number: 80

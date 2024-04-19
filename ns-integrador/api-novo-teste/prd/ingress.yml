@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-novo-teste
+  namespace: prd-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  prd-api-novo-teste.purecloud.com.br
+    secretName: meu-tls-prd-api-novo-teste.purecloud.com.br
+  rules:
+  - host: prd-api-novo-teste.purecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prd-api-novo-teste
+            port:
+              number: 80
