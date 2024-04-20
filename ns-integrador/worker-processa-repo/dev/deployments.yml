@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-worker-processa-repo
-          image: "rodrigomotadevops/dev-worker-processa-repo:8761344114"
+          image: "rodrigomotadevops/dev-worker-processa-repo:8761457867"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
