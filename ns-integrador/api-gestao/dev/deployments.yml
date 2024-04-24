@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-api-gestao
-          image: "rodrigomotadevops/dev-api-gestao:8793398830"
+          image: "rodrigomotadevops/dev-api-gestao:8809535898"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
