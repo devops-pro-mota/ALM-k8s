@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: prd-api-gestao
-          image: "rodrigomotadevops/prd-api-gestao:1"
+          image: "rodrigomotadevops/prd-api-gestao:8959582257"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
