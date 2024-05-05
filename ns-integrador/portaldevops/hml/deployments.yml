@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: hml-portaldevops
-          image: "rodrigomotadevops/hml-portaldevops:1"
+          image: "rodrigomotadevops/hml-portaldevops:8959579522"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
