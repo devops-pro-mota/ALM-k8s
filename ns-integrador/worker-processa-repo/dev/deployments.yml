@@ -22,19 +22,6 @@ spec:
         - name: dev-worker-processa-repo
           image: "rodrigomotadevops/dev-worker-processa-repo:8761627518"
           imagePullPolicy: "IfNotPresent"
-          env:
-            - name: ENVIRONMENT
-              value: dev
-            - name: ENDPOINT_BM_BROKER_COLETOR
-              value: ${DEV_ENDPOINT_BROKER_COLETOR}
-            - name: ENDPOINT_RESOURCE_BM_BROKER_COLETOR
-              value: '${DEV_ENDPOINT_RESOURCE_BROKER_COLETOR}'
-            - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: '${OTEL_EXPORTER_OTLP_ENDPOINT}'
-            - name: 'OTEL_EXPORTER_OTLP_PROTOCOL'
-              value: '${OTEL_EXPORTER_OTLP_PROTOCOL}'
-            - name: 'OTEL_RESOURCE_ATTRIBUTES'
-              value: '${OTEL_RESOURCE_ATTRIBUTES}=dev'   
           ports:
             - containerPort: 80
           resources:
