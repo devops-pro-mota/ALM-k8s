@@ -7,6 +7,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: "/"
     cert-manager.io/issuer: letsencrypt-nginx
+    Versao-RetryBuild: 2
 spec:
   tls:
   - hosts:
