@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-registry
+  namespace: dev-ns-integrador
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    cert-manager.io/issuer: letsencrypt-nginx
+
+spec:
+  tls:
+  - hosts:
+    -  dev-api-registry.pudecloud.com.br
+    secretName: meu-tls-dev-api-registry.pudecloud.com.br
+  rules:
+  - host: dev-api-registry.pudecloud.com.br
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: dev-api-registry
+            port:
+              number: 80
