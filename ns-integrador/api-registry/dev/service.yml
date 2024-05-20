@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: dev-api-registry
   namespace: dev-ns-integrador
-  spec:
+spec:
   ports:
     - name: http
       port: 80
@@ -12,5 +12,3 @@ metadata:
   selector:
     app: dev-api-registry
   type: ClusterIP
-
-
