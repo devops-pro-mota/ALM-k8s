@@ -51,4 +51,24 @@ spec:
             requests:
               cpu: 150m
               memory: 200Mi
+        - name: registry-app
+          image: rodrigomotadevops/sidecar-registry
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          env:
+          - name: APP_NAME
+            value: "dev-api-registry"   
+          - name: APP_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: APP_IMAGENAME
+            value: "rodrigomotadevops/sidecar-registry"
+          - name: APP_FQDN
+            value: "dev-api-registry.purecloud.com.br"              
       terminationGracePeriodSeconds: 300
