@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-api-registry
-          image: "rodrigomotadevops/dev-api-registry:9152643094"
+          image: "rodrigomotadevops/dev-api-registry:9153047446"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
