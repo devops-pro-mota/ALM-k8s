@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: dev-portaldevops
-          image: "rodrigomotadevops/dev-portaldevops:9151393049"
+          image: "rodrigomotadevops/dev-portaldevops:9152467166"
           imagePullPolicy: "IfNotPresent"
           env:
             - name: ENVIRONMENT
