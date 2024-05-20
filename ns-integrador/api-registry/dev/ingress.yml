@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: "/"
     cert-manager.io/issuer: letsencrypt-nginx
     nginx.ingress.kubernetes.io/proxy-body-size: "5m"
-    Versao-RetryBuild: "7"
+    Versao-RetryBuild: "8"
 spec:
   tls:
   - hosts:
