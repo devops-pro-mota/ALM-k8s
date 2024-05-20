@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: dev-api-registry
   namespace: dev-ns-integrador
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /health
-    alb.ingress.kubernetes.io/success-codes: '200'
-spec:
+  spec:
   ports:
     - name: http
       port: 80
@@ -14,4 +11,6 @@ spec:
       protocol: TCP
   selector:
     app: dev-api-registry
-  type: NodePort
+  type: ClusterIP
+
+
