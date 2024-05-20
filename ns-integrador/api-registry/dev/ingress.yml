@@ -13,9 +13,9 @@ spec:
   tls:
   - hosts:
     - dev-api-registry.pudecloud.com.br
-    secretName: meu-tls-dev-api-registry.pudecloud.com.br
+    secretName: meu-tls-dev-api-registry.purecloud.com.br
   rules:
-  - host: dev-api-registry.pudecloud.com.br
+  - host: dev-api-registry.purecloud.com.br
     http:
       paths:
       - path: /
